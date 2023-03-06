@@ -9,7 +9,6 @@ end)
 RegisterServerEvent(Events["Craft"], function(weaponName)
     local src = source 
     local data = ESX.GetPlayerFromId(src)
-    print(CanCraft(src, weaponName))
     if (CanCraft(src, weaponName)[1]) then 
         for _, _data in pairs(Settings.Craftings[weaponName]["RequiredItems"]) do 
             data.removeInventoryItem(_, _data)
